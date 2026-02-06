@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>APARERI — Luxury engineered for longevity</title>
+  <meta name="description" content="High-end sustainable fashion: multimodal garments, traceable materials, created to last years. Join the waitlist for early access." />
+  <meta name="theme-color" content="#0B6B4F" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="APARERI" />
+  <meta property="og:description" content="Luxury engineered for longevity. Multimodal garments, traceable materials." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts: serif headings + clean body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Subtle scroll progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollBar"></div>
+  </div>
+
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a class="brand" href="./index.html" aria-label="APARERI home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">APARERI</span>
+        </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#vision">Vision</a>
+        <a href="#collection">Collection</a>
+        <a href="#math">Calculators</a>
+        <a href="#traceability">Traceability</a>
+        <a href="blog/index.html">Journal</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header__cta">
+        <a class="btn btn--ghost" href="blog/index.html">Read the journal</a>
+        <a class="btn btn--primary" href="#waitlist">Join waitlist</a>
+
+        <button class="menu-btn" type="button" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <span class="menu-btn__icon" aria-hidden="true"></span>
+          <span class="menu-btn__label">Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#vision">Vision</a>
+      <a href="#collection">Collection</a>
+      <a href="#math">Calculators</a>
+      <a href="#traceability">Traceability</a>
+      <a href="#waitlist">Waitlist</a>
+      <a href="blog/index.html">Journal</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero hero--fullbleed">
+      <video class="hero__bgImage" autoplay muted loop playsinline>
+      <source src="assets/media/apareri-hero.mp4" type="video/mp4" />
+       </video>
+      </div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="kicker reveal">
+            <span class="kicker__dot" aria-hidden="true"></span>
+            <span>multimodal clothing • traceable materials • created to last years</span>
+          </div>
+
+          <h1 class="h1 reveal">Forever your moment</h1>
+
+
+          <p class="subhead reveal">
+            APARERI designs pieces meant to live every version of your story with you.
+            Each piece is created to wear multiple ways, pack beautifully, and hold its shape season after season.
+          </p>
+
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary" href="#waitlist">Join the waitlist</a>
+            <a class="btn btn--outline" href="#collection">Preview the Hera Collecion</a>
+            <a class="btn btn--ghost" href="about.html">How we define luxury & sustainability</a>
+          </div>
+
+        <aside class="hero__panel reveal" aria-label="Try it: quick style proof">
+          <div class="hero__panel__top">
+
+            <div class="panel-badge">PREVIEW</div>
+            <div class="panel-title">Let's build a sustainable closet</div>
+            <div class="panel-sub">Try our calculators*. Unlock variety, & make conscious choices that complement your style.</div>
+            <div class="panel-sub"><em>*Just input a count of what you already have</em></div>
+          </div>
+
+          <div class="panel-mini">
+            <div class="panel-mini__label">Today’s benchmark</div>
+            <div class="panel-mini__value"><span class="mono" id="benchmarkOutfits">—</span> looks</div>
+            <div class="panel-mini__meta">From 6 tops, 4 bottoms, 3 layers</div>
+          </div>
+
+          <div class="panel-actions">
+            <a class="btn btn--primary btn--wide" href="#math">Open calculators</a>
+            <a class="btn btn--ghost btn--wide" href="#traceability">See traceability</a>
+          </div>
+
+      <div class="hero__glow" aria-hidden="true"></div>
+    </section>
+
+    <section id="vision" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title reveal">A data-based approach to sustainable fashion.</h2>
+          <p class="section-lead reveal">
+            Sustainability has to include lifespan & transparency. We design fewer, better garments; document the chain; and create for care, repair, and repeat wear.
+            "What do this even mean?"
+            Well...
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card reveal">
+            <div class="badge"><b>01</b> multimodal</div>
+            <h3>Designed to wear multiple ways</h3>
+            <p>Convertible closures, modular construction, reversible details. So one piece stays relevant across settings.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="badge"><b>02</b> trace-first</div>
+            <h3>Who made it. Where. How.</h3>
+            <p>We share with you our artisans' stories & document component-level disclosure with traceable paths: origin → construction → finish → distribution. We publish what’s confirmed and what’s in progress.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="badge"><b>03</b> created to last</div>
+            <h3>Here for a good time, and a long time</h3>
+            <p>APARERI focuses on construction-first patterning, stress-point reinforcement, and repair-friendly choices. Durability is our core sustainability metric.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collection" class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title reveal">Hera Collection preview</h2>
+          <p class="section-lead reveal">
+            Ever needed to show up but didn't have the right outfit or time? APARERI pieces shift with your needs; between celebrations, work, travel, evenings, you-name-it—without compromising style, comfort or construction.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="product reveal" data-product="modular-dress">
+            <div class="product__top">
+              <img
+                class="product__media"
+                src="assets/media/products/apareri-dress-image.jpg"
+                alt="Modular Dress"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="product__body">
+              <div class="product__title">
+                <h3>Modular Dress</h3>
+                <span>multi-wear</span>
+              </div>
+              <div class="tags">
+                <span class="tag">maxi→midi→knee→mini</span>
+                <span class="tag">dress ↔ skirt+top</span>
+                <span class="tag">adjustable slit</span>
+                <span class="tag">colorfast testing</span>
+                <span class="tag">v1:natural fiber</span>
+                <span class="tag">v2:handmade crotchet</span>
+                <span class="tag">v3:blended fibers</span>
+              </div>
+
+              <div class="product__actions">
+                <button class="btn btn--outline btn--sm" type="button" data-open-modal="dress">View wear modes</button>
+                <a class="btn btn--ghost btn--sm" href="#math">Calculate looks</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product reveal" data-product="modular-jewelry">
+            <div class="product__top">
+              <img
+                class="product__media"
+                src="assets/media/products/apareri-jewelry-image.jpg"
+                alt="Modular Jewelry"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+              <div class="tags">
+                <span class="tag">adjustable sizing</span>
+                <span class="tag">swap metals & stones</span>
+                <span class="tag">hypoallergenic</span>
+              </div>
+              <div class="product__actions">
+                <button class="btn btn--outline btn--sm" type="button" data-open-modal="jewelry">See system</button>
+                <a class="btn btn--ghost btn--sm" href="#waitlist">Get early access</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product reveal" data-product="reversible-knit">
+            <div class="product__top">
+              <div class="product__top">
+                <img
+                  class="product__media"
+                  src="assets/media/products/apareri-shirt-image.jpg"
+                  alt="Reversible Knit Shirt"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="tags">
+                <span class="tag">temperature adaptable</span>
+                <span class="tag">minimal seams</span>
+                <span class="tag">repairable</span>
+                <span class="tag">100% biodegradeable fabric</span>
+                <span class="tag">multimodal</span>
+              </div>
+              <div class="product__actions">
+                <button class="btn btn--outline btn--sm" type="button" data-open-modal="knit">Styling notes</button>
+                <a class="btn btn--ghost btn--sm" href="blog/index.html">Read journal</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <hr class="sep" />
+
+        <div class="grid-2">
+          <div class="card reveal">
+            <h3>What “luxury” means to us</h3>
+            <p>
+              Precision patterning, materials chosen for performance + hand-feel, and a calm aesthetic that holds up over time.
+              Luxury is the absence of compromise—especially on longevity.
+            </p>
+          </div>
+          <div class="card reveal">
+            <h3>What “sustainable” means to us</h3>
+            <p>
+              Fewer releases, traceable sources, and durability as a sustainability strategy.
+              We publish what’s confirmed, label what’s in progress, and improve each iteration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="math" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title reveal">It should add up</h2>
+          <p class="section-lead reveal">
+            Two small calculators, designed like a mini game. Explore your style's variety, and see why “fewer, better” works.
+          </p>
+        </div>
+
+        <div class="grid-2 grid-2--stretch">
+          <!-- Capsule inputs -->
+          <div class="card reveal">
+            <div class="card-head">
+              <h3>Capsule calculator</h3>
+              <span class="pill pill--soft">outfit combos</span>
+            </div>
+
+            <div class="field-row" style="margin-top: 12px;">
+              <div class="field">
+                <label for="capsuleTops">Tops</label>
+                <input id="capsuleTops" type="number" min="1" max="30" value="6" inputmode="numeric" />
+              </div>
+              <div class="field">
+                <label for="capsuleBottoms">Bottoms</label>
+                <input id="capsuleBottoms" type="number" min="1" max="30" value="4" inputmode="numeric" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="capsuleLayers">Layers (jackets / knits)</label>
+                <input id="capsuleLayers" type="number" min="0" max="20" value="3" inputmode="numeric" />
+              </div>
+              <div class="field">
+                <label for="capsuleIncludeLayers">Include layers</label>
+                <select id="capsuleIncludeLayers">
+                  <option value="yes" selected>Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+<div class="field-row">
+  <div class="field">
+    <label for="capsuleCohesion">Wardrobe cohesion</label>
+    <select id="capsuleCohesion">
+      <option value="90" selected>Very cohesive (90%)</option>
+      <option value="80">Mostly cohesive (80%)</option>
+      <option value="70">Mixed closet (70%)</option>
+      <option value="50">Statement-heavy (50%)</option>
+      <option value="100">Everything matches (100%)</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="capsuleInactive">In rotation</label>
+    <select id="capsuleInactive">
+      <option value="100" selected>100% (all pieces wearable)</option>
+      <option value="90">~90%</option>
+      <option value="75">~75%</option>
+      <option value="65">~65% (many orphans)</option>
+    </select>
+  </div>
+</div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="capsuleGoal">Goal</label>
+                <select id="capsuleGoal">
+                  <option value="30">30 looks (starter)</option>
+                  <option value="60" selected>60 looks (curated)</option>
+                  <option value="100">100 looks (signature)</option>
+                  <option value="200">200 looks (iconic)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>&nbsp;</label>
+                <button class="btn btn--outline btn--wide" type="button" id="capsuleShare">Share score</button>
+              </div>
+            </div>
+
+            <p class="small" style="margin: 0; color: rgba(255,255,255,0.72);">
+            </p>
+          </div>
+
+          <!-- Capsule results -->
+          <div class="card reveal celebrate" aria-live="polite">
+            <div class="card-head">
+              <h3>Your capsule score</h3>
+              <span class="pill" id="capsuleLevel">—</span>
+            </div>
+
+            <div class="score">
+              <div class="score__big mono" id="capsuleOutfits">—</div>
+              <div class="score__meta">tops × bottoms × (optional layers)</div>
+            </div>
+
+            <div class="progress">
+              <div class="progress__bar" id="capsuleProgress" style="width:0%"></div>
+            </div>
+
+            <div class="score-grid">
+              <div class="score-chip">
+                <div class="score-chip__k">Goal progress</div>
+                <div class="score-chip__v mono" id="capsuleGoalProgress">—</div>
+              </div>
+              <div class="score-chip">
+                <div class="score-chip__k">Items used</div>
+                <div class="score-chip__v mono" id="capsuleItemsUsed">—</div>
+              </div>
+            </div>
+
+            <hr class="sep" />
+
+            <p style="margin-top: 0;">
+              Multi-wear construction increases combinations <em>without</em> increasing closet volume.
+              Use the multimodal calculator next to quantify a single garment’s range.
+            </p>
+
+            <div class="btn-row">
+              <a class="btn btn--ghost" href="blog/capsule-wardrobe.html">Read: capsule wardrobes</a>
+              <a class="btn btn--primary" href="#waitlist">Get the capsule guide</a>
+            </div>
+          </div>
+
+          <!-- Multiwear inputs -->
+<div class="card reveal">
+  <div class="card-head">
+    <h3>Multimodality calculator</h3>
+    <span class="pill pill--soft">&infin</span>
+  </div>
+
+  <p class="small" style="margin-top: 0; color: rgba(255,255,255,0.76);">
+   </p>
+
+  <div class="field">
+    <label for="mwPiece">Piece</label>
+    <select id="mwPiece">
+      <option value="modular-dress" selected>Modular Dress — Hera 001</option>
+    </select>
+  </div>
+
+  <div class="field" style="margin-top: 10px;">
+    <label>Count modes</label>
+    <div class="chips chips--calc" role="group" aria-label="Count modes">
+      <button class="chip is-active" type="button" data-mw-toggle="dress" aria-pressed="true">Dress</button>
+      <button class="chip is-active" type="button" data-mw-toggle="set" aria-pressed="true">Skirt + top</button>
+      <button class="chip is-active" type="button" data-mw-toggle="skirt" aria-pressed="true">Skirt only</button>
+      <button class="chip is-active" type="button" data-mw-toggle="scarf" aria-pressed="true">Scarf (neck/waist)</button>
+    </div>
+    <p class="small" style="margin: 6px 0 0; color: rgba(255,255,255,0.72);">
+      Preset: maxi/midi/knee/mini in each mode. Scarf is counted only when at least 1 panel is removed from the bottom section.
+    </p>
+  </div>
+
+  <div class="field-row" style="margin-top: 12px;">
+    <div class="field">
+      <label for="mwSlitOptions">Slit settings</label>
+      <input id="mwSlitOptions" type="number" min="0" max="12" value="4" inputmode="numeric" />
+    </div>
+    <div class="field">
+      <label for="mwGoal">Goal</label>
+      <select id="mwGoal">
+        <option value="6">6 modes (starter)</option>
+        <option value="14" selected>14 modes (curated)</option>
+        <option value="18">18 modes (elite)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field-row">
+    <div class="field">
+      <label>&nbsp;</label>
+      <button class="btn btn--outline btn--wide" type="button" id="mwShare">Share score</button>
+    </div>
+  </div>
+
+  <p class="small" style="margin: 0; color: rgba(255,255,255,0.72);">
+    <p class="small" style="margin: 0; color: rgba(255,255,255,0.72);">
+ </p>
+</div>
+
+<!-- Multiwear results -->
+<div class="card reveal celebrate" aria-live="polite" data-celebrate>
+  <div class="card-head">
+    <h3>How many different ways can you wear it?</h3>
+    <span class="pill" id="mwLevel">—</span>
+  </div>
+
+  <div class="score">
+    <div class="score__big mono" id="mwTotalLooks">—</div>
+    <div class="score__meta">core silhouette ways (slit positions shown as details below)</div>
+  </div>
+
+  <div class="progress">
+    <div class="progress__bar" id="mwProgress" style="width:0%"></div>
+  </div>
+
+  <div class="mw-breakdown" style="margin-top: 14px;">
+  <div class="mw-row"><span>Dress ways</span> <b class="mono" id="mwDressLooks">—</b></div>
+  <div class="mw-tags" id="mwDressList" aria-label="Dress ways list"></div>
+
+  <div class="mw-row" style="margin-top:12px;"><span>Skirt + top ways</span> <b class="mono" id="mwSetLooks">—</b></div>
+  <div class="mw-tags" id="mwSetList" aria-label="Skirt plus top ways list"></div>
+
+  <div class="mw-row" style="margin-top:12px;"><span>Skirt-only ways</span> <b class="mono" id="mwSkirtLooks">—</b></div>
+  <div class="mw-tags" id="mwSkirtList" aria-label="Skirt only ways list"></div>
+
+  <div class="mw-row" style="margin-top:12px;"><span>Scarf ways</span> <b class="mono" id="mwScarfLooks">—</b></div>
+  <div class="mw-tags" id="mwScarfList" aria-label="Scarf ways list"></div>
+
+  <hr class="sep" style="margin:16px 0;" />
+
+  <div class="mw-row"><span>No-slit versions (detail)</span> <b class="mono" id="mwNoSlitLooks">—</b></div>
+  <div class="mw-row"><span>Slit versions (detail)</span> <b class="mono" id="mwSlitLooks">—</b></div>
+</div>
+
+  <div class="score-grid" style="margin-top: 14px;">
+    <div class="score-chip">
+      <div class="score-chip__k">Base configurations</div>
+      <div class="score-chip__v mono" id="mwBaseConfigs">—</div>
+    </div>
+    <div class="score-chip">
+      <div class="score-chip__k">Goal progress</div>
+      <div class="score-chip__v mono" id="mwGoalProgress">—</div>
+    </div>
+  </div>
+
+  <hr class="sep" />
+  <p style="margin-top: 0;">
+   </p>
+
+  <div class="btn-row">
+    <a class="btn btn--ghost" href="#lookbook">View collection</a>
+    <a class="btn btn--primary" href="#waitlist">Get early access</a>
+  </div>
+</div>
+</section>
+
+
+<section id="traceability" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title reveal">Traceability ledger</h2>
+          <p class="section-lead reveal">
+           Click “View passport” to see the paths your garment took to get to you-paths we're now happy will be part of your story too.
+          </p>
+        </div>
+
+        <div class="chips reveal" role="group" aria-label="Filter materials">
+          <button class="chip is-active" type="button" data-filter="All" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-filter="Certified" aria-pressed="false">Certified</button>
+          <button class="chip" type="button" data-filter="Bio-based" aria-pressed="false">Bio-based</button>
+          <button class="chip" type="button" data-filter="Recycled" aria-pressed="false">Recycled</button>
+        </div>
+
+        <div id="ledger" class="ledger" aria-live="polite"></div>
+
+        <hr class="sep" />
+
+        <div class="grid-2">
+          <div class="card reveal">
+            <h3>Longevity pledge</h3>
+            <p>
+              “Created to last” means: strong seams, stable fabrics, thoughtful stress-point reinforcement,
+              modularity where it improves lifespan, and care guidance that respects your time.
+            </p>
+          </div>
+          <div class="card reveal">
+            <h3>Data minimisation</h3>
+            <p>
+              We collect the minimum needed for the waitlist (email + consent). No trackers. No ad pixels. curate headers enabled on hosting.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="waitlist" class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title reveal">Join the waitlist</h2>
+          <p class="section-lead reveal">
+            Get early access, behind-the-scenes material notes, and first drop details. Limited emails—only when there’s something worth sending.
+          </p>
+        </div>
+
+        <!-- Netlify Forms: secure-by-default handling on Netlify.
+             Includes a honeypot field (anti-spam) and basic client-side validation.
+             Add reCAPTCHA later if needed (requires CSP updates + Netlify settings). -->
+        <div class="form card reveal">
+          <form
+            id="waitlist-form"
+            name="waitlist"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thanks/"
+          >
+            <input type="hidden" name="form-name" value="waitlist" />
+
+            <p class="hidden">
+              <label>
+                Don’t fill this out if you’re human:
+                <input name="bot-field" type="text" autocomplete="off" />
+              </label>
+            </p>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="firstName">First name (optional)</label>
+                <input id="firstName" name="firstName" type="text" autocomplete="given-name" placeholder="Amina" maxlength="40" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="amina@domain.com" required maxlength="80" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="interest">Most interested in</label>
+                <select id="interest" name="interest">
+                  <option value="multimodal">Multimodal / convertible designs</option>
+                  <option value="capsule">Capsule wardrobe essentials</option>
+                  <option value="traceability">Traceable materials + sourcing</option>
+                  <option value="longevity">Durability + care guidance</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="style">Style note (optional)</label>
+                <input id="style" name="style" type="text" placeholder="Minimal, tailored, neutral palette" maxlength="80" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="notes">Anything we should create for you? (optional)</label>
+              <textarea id="notes" name="notes" placeholder="Sizing preferences, what you wish existed, etc." maxlength="400"></textarea>
+              <div class="helper" id="waitlist-status" aria-live="polite"></div>
+            </div>
+
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>I agree to receive email updates. Unsubscribe anytime.</span>
+            </label>
+
+            <div class="form-actions">
+              <button id="waitlist-submit" class="btn btn--primary" type="submit">Join waitlist</button>
+              <p class="privacy">
+                By joining, you agree to our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title reveal">Journal</h2>
+          <p class="section-lead reveal">
+            Notes on curating a smaller, better wardrobe: capsule strategies, garment care, and what transparency looks like in practice.
+          </p>
+        </div>
+
+        <div class="post-list">
+          <a class="post reveal" href="blog/capsule-wardrobe.html">
+            <h3>Capsule wardrobes, without the boredom</h3>
+            <p>How to curate a small wardrobe that still feels expressive—using proportion, texture, and repeatable formulas.</p>
+            <div class="post-meta"><span>Capsule</span><span>•</span><span>6 min read</span></div>
+          </a>
+
+          <a class="post reveal" href="blog/traceability-101.html">
+            <h3>Traceability 101: what “trace-first” actually means</h3>
+            <p>A simple definition, what you can verify, and how to read a ledger without greenwashing.</p>
+            <div class="post-meta"><span>Traceability</span><span>•</span><span>7 min read</span></div>
+          </a>
+
+          <a class="post reveal" href="blog/caring-for-garments.html">
+            <h3>Care is climate action</h3>
+            <p>Wash less, air more, mend early. The highest-impact sustainability habit is keeping what you own in rotation.</p>
+            <div class="post-meta"><span>Longevity</span><span>•</span><span>5 min read</span></div>
+          </a>
+
+          <a class="post reveal" href="blog/index.html">
+            <h3>More posts →</h3>
+            <p>See the full journal index and future releases.</p>
+            <div class="post-meta"><span>Journal</span><span>•</span><span>Updated often</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title reveal">FAQ</h2>
+          <p class="section-lead reveal">A few upfront answers while Hera Collection is in prototype testing.</p>
+        </div>
+
+        <details class="faq reveal">
+          <summary>When is the first drop?</summary>
+          <p>When prototypes pass fit + durability testing. Join the waitlist for first access updates.</p>
+        </details>
+
+        <details class="faq reveal">
+          <summary>Will you publish sourcing details even if they’re imperfect?</summary>
+          <p>Yes. The goal is honest documentation: what we know, what we’re improving, and what’s next.</p>
+        </details>
+
+        <details class="faq reveal">
+          <summary>What makes the pieces “created to last”?</summary>
+          <p>Material performance, construction choices, and care guidance—plus a repair-forward design mindset.</p>
+        </details>
+
+        <details class="faq reveal">
+          <summary>Do you track visitors?</summary>
+          <p>No trackers or ad pixels by default. The waitlist stores submissions securely in the hosting provider’s form system.</p>
+        </details>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <p id="toastTitle" class="toast__title">Status</p>
+      <p id="toastBody" class="toast__body">Message</p>
+    </div>
+
+    <!-- Product modal -->
+    <div id="productModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="productTitle">
+      <div class="modal-card" role="document">
+        <div class="modal-head">
+          <h3 id="productTitle" class="modal-title">Details</h3>
+          <button class="modal-close" type="button" aria-label="Close" data-modal-close>×</button>
+        </div>
+        <div class="modal-body" id="productBody"></div>
+        <div class="modal-actions">
+          <a class="btn btn--primary" href="#waitlist" data-modal-close>Get early access</a>
+          <button class="btn btn--ghost" type="button" data-modal-close>Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Passport modal -->
+    <div id="passportModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="passportTitle">
+      <div class="modal-card" role="document">
+        <div class="modal-head">
+          <h3 id="passportTitle" class="modal-title">Material passport</h3>
+          <button class="modal-close" type="button" aria-label="Close" data-modal-close>×</button>
+        </div>
+        <div class="modal-body" id="passportBody"></div>
+        <div class="modal-actions">
+          <a class="btn btn--primary" href="#waitlist" data-modal-close>Get early access</a>
+          <button class="btn btn--ghost" type="button" data-modal-close>Close</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="brand brand--footer" style="margin-bottom: 10px;">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__name">APARERI</span>
+        </div>
+        <small>Luxury designed for longevity • Trace-first sourcing • Capsule-ready silhouettes</small>
+      </div>
+
+      <div>
+        <small>
+          <a href="#waitlist">Waitlist</a> •
+          <a href="blog/index.html">Journal</a> •
+          <a href="#traceability">Traceability</a> •
+          <a href="about.html">About</a> •
+          <a href="contact.html">Contact</a>
+        </small>
+      </div>
+
+      <div>
+        <small>
+          Policies: <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a><br />
+          Contact: <a href="mailto:apareri2024@gmail.com">apareri2024@gmail.com</a><br />
+          © <span id="year"></span> APARERI
+        </small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+</body>
+</html>
