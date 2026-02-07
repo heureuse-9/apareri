@@ -58,9 +58,13 @@ a:hover{ color: rgba(15,138,97,0.95); }
 img{ max-width:100%; display:block; }
 .mono{ font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
 
+/* GLOBAL CONTENT RAIL — used everywhere */
 .container{
-  width: min(92vw, var(--max));
+  width: 100%;
+  max-width: 1240px; /* adjust once, affects entire site */
   margin: 0 auto;
+  padding-left: clamp(20px, 4vw, 56px);
+  padding-right: clamp(20px, 4vw, 56px);
 }
 
 .skip-link{
@@ -475,16 +479,10 @@ img{ max-width:100%; display:block; }
   gap: 18px;
 }
 
-@media (max-width: 1100px){
-  .grid-3{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
-
 @media (max-width: 720px){
   .grid-3{ grid-template-columns: 1fr; }
   .grid-2{ grid-template-columns: 1fr; }
 }
-
-
 
 /* Cards */
 .card{
@@ -1096,13 +1094,24 @@ input:focus, select:focus, textarea:focus{
   overflow: hidden;
 }
 
-/* Put all hero content above the video */
+/* HERO: copy left, preview panel right */
 .hero--fullbleed .hero__grid{
   position: relative;
   z-index: 2;
-  grid-template-columns: 1fr; /* copy spans width */
-  padding: clamp(96px, 12vh, 150px) 0 56px; /* room for sticky header */
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;  /* left text | right preview box */
+  gap: 22px;
+  align-items: start;
+  padding: clamp(96px, 12vh, 150px) 0 56px;
 }
+
+/* On smaller screens, stack (recommended) */
+@media (max-width: 980px){
+  .hero--fullbleed .hero__grid{
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Make the existing hero media fill the entire hero */
 .hero--fullbleed .hero-media{
@@ -1218,16 +1227,328 @@ input:focus, select:focus, textarea:focus{
   pointer-events: none;
 }
 /* FORCE 3 columns; if screen is small, scroll sideways instead of stacking */
-#collection .grid-3{
+
+/* ==========================================================
+   FIX PACK — 3 columns everywhere + uniform product media
+   Paste at the VERY END of assets/styles.css
+   ========================================================== */
+
+/* 1) FORCE .grid-3 to always be 3 columns (override your breakpoints) */
+.grid-3{
   display: grid !important;
-  grid-template-columns: repeat(3, minmax(280px, 1fr)) !important; /* keeps cards usable */
-  gap: 22px !important;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
-}
-#collection .grid-3 > *{
-  scroll-snap-align: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  align-items: start;
 }
 
+/* Keep 3-up on small screens by allowing sideways scroll (no stacking) */
+@media (max-width: 900px){
+  .grid-3{
+    grid-template-columns: repeat(3, minmax(260px, 1fr)) !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+  .grid-3 > *{
+    scroll-snap-align: start;
+  }
+}
+
+/* 2) UNIFORM product image frames (same size side-by-side) */
+/* Cancels your earlier fixed height + flex centering */
+.product__top{
+  height: auto !important;
+  aspect-ratio: 4 / 5 !important;      /* consistent fashion frame */
+  display: block !important;           /* overrides earlier flex */
+  padding: 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+/* This is what makes them look the same size */
+.product__media{
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  object-fit: cover !important;        /* uniform visual size */
+  object-position: center !important;
+  background: transparent !important;  /* removes contain/letterbox background */
+}
+
+/* Optional: consistent gentle zoom on hover */
+.product:hover .product__media{
+  transform: scale(1.05);
+  transition: transform 600ms ease;
+}
+/* ==========================================================
+   COLLECTION: compact 3-up cards (image not overpowering)
+   Paste at VERY BOTTOM of styles.css
+   ========================================================== */
+
+/* Keep collection cards from getting huge on wide screens */
+#collection .grid-3{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 320px)) !important; /* cap card width */
+  justify-content: center !important;                            /* center the row */
+  gap: 16px !important;
+}
+
+/* Make image area shorter so text stays visible */
+#collection .product__top{
+  height: 220px !important;      /* key change: reduce vertical dominance */
+  aspect-ratio: auto !important; /* cancels any earlier aspect-ratio overrides */
+  display: block !important;     /* cancels earlier flex-centering rules */
+  padding: 0 !important;
+}
+
+/* Uniform crop so all three look consistent */
+#collection .product__media{
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;       /* uniform size */
+  object-position: 50% 35% !important;/* lifts subject (adjust if needed) */
+}
+
+/* Tighten copy spacing a bit so it reads immediately */
+#collection .product__body{
+  padding: 14px 16px !important;
+}
+#collection .product__title h3{
+  font-size: 16px;
+}
+#collection .tags{
+  gap: 8px !important;
+  margin-top: 10px !important;
+}
+#collection .tag{
+  font-size: 11px !important;
+  padding: 5px 8px !important;
+}
+
+/* Small screens: keep 3 side-by-side WITHOUT stacking (scroll horizontally) */
+@media (max-width: 980px){
+  #collection .grid-3{
+    grid-template-columns: repeat(3, minmax(240px, 1fr)) !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+  #collection .grid-3 > *{ scroll-snap-align: start; }
+  #collection .product__top{ height: 200px !important; }
+}
+
+/* ==========================================================
+   COLLECTION LAYOUT FIX — grid sits beside copy, not below
+   ========================================================== */
+
+#collection .collection-layout{
+  display: grid;
+  grid-template-columns: 1fr 2fr;   /* text | cards */
+  gap: 32px;
+  align-items: start;
+}
+
+/* Keep cards visually compact */
+#collection .grid-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+/* Prevent product cards from growing too tall */
+#collection .product__top{
+  height: 220px !important;
+}
+
+/* Small screens: stack copy above cards (intentional) */
+@media (max-width: 980px){
+  #collection .collection-layout{
+    grid-template-columns: 1fr;
+  }
+
+  /* Still keep 3 cards side-by-side via horizontal scroll */
+  #collection .grid-3{
+    grid-template-columns: repeat(3, minmax(240px, 1fr)) !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  #collection .grid-3 > *{
+    scroll-snap-align: start;
+  }
+}
+/* ==========================================================
+   COLLECTION: "one roof + three pillars"
+   Copy sits ABOVE cards + roof text spans the page
+   Paste at VERY BOTTOM of styles.css
+   ========================================================== */
+
+/* 1) If you previously added the side-by-side wrapper, neutralize it */
+#collection .collection-layout{
+  display: block !important;
+}
+#collection .collection-copy,
+#collection .collection-cards{
+  width: 100% !important;
+}
+
+/* 2) Make the collection section feel end-to-end */
+#collection .container{
+  width: 100% !important;
+  max-width: none !important;
+  padding-left: 4vw !important;
+  padding-right: 4vw !important;
+}
+
+/* Remove the global "max-width: 80ch" cap for this section */
+#collection .section-head{
+  max-width: none !important;
+  margin-bottom: 18px;
+}
+#collection .section-title,
+#collection .section-lead{
+  max-width: none !important;
+}
+
+/* 3) Three pillars under the roof */
+#collection .grid-3{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 320px)) !important; /* pillars not huge */
+  justify-content: center !important;                            /* centered row */
+  gap: 16px !important;
+}
+
+/* Make images not dominate the card height */
+#collection .product__top{
+  height: 220px !important;
+  aspect-ratio: auto !important;
+  display: block !important; /* cancels earlier flex centering */
+}
+
+/* Uniform thumbnails (same visual size) */
+#collection .product__media{
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: 50% 35% !important; /* adjust if faces are cut */
+}
+
+/* 4) Small screens: keep 3 side-by-side (swipe instead of stacking) */
+@media (max-width: 980px){
+  #collection .grid-3{
+    grid-template-columns: repeat(3, minmax(240px, 1fr)) !important;
+    justify-content: start !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+  #collection .grid-3 > *{
+    scroll-snap-align: start;
+  }
+  #collection .product__top{
+    height: 200px !important;
+  }
+}
+
+/* ==========================================================
+   COLLECTION (roof + 3 pillars) — never drop the 3rd card
+   Paste at VERY BOTTOM of styles.css
+   ========================================================== */
+
+/* Make the roof text span wider (end-to-end feel) */
+#collection .container{
+  width: 100% !important;
+  max-width: none !important;
+  padding-left: clamp(18px, 4vw, 56px) !important;
+  padding-right: clamp(18px, 4vw, 56px) !important;
+}
+#collection .section-head{
+  max-width: none !important;
+}
+
+/* Force 3 columns for collection at all widths */
+#collection .grid-3{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  align-items: start;
+}
+
+/* If the screen gets too narrow, keep 3 pillars by allowing horizontal swipe */
+@media (max-width: 980px){
+  #collection .grid-3{
+    grid-template-columns: repeat(3, minmax(240px, 1fr)) !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+  #collection .grid-3 > *{ scroll-snap-align: start; }
+}
+/* COLLECTION: slightly taller image frames (less aggressive crop) */
+#collection .product__top{
+  height: 260px !important;   /* was ~220px */
+}
+
+/* If you want even more breathing room, use 280px instead */
+/*
+#collection .product__top{
+  height: 280px !important;
+}
+*/
+
+/* RESET collection container to global rail */
+#collection .container{
+  max-width: 1240px !important;
+  padding-left: clamp(20px, 4vw, 56px) !important;
+  padding-right: clamp(20px, 4vw, 56px) !important;
+}
+
+/* ==========================================================
+   GLOBAL CONTENT RAIL — align ALL sections consistently
+   Fixes: luxury/sustainable cards vs calculators misalignment
+   ========================================================== */
+
+/* 1) Define ONE site-wide content rail */
+:root{
+  --content-max: 1240px; /* adjust once if needed */
+  --content-pad: clamp(20px, 4vw, 56px);
+}
+
+/* 2) Enforce the rail everywhere */
+.container{
+  width: 100% !important;
+  max-width: var(--content-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--content-pad) !important;
+  padding-right: var(--content-pad) !important;
+}
+
+/* 3) Section headings should align with cards below */
+.section-head{
+  max-width: none !important;   /* remove 80ch cap */
+}
+
+/* 4) Force all grids to respect the same rail */
+.section .grid-2,
+.section .grid-3{
+  max-width: var(--content-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 5) Cards should never “bleed” wider than the rail */
+.section .card{
+  width: 100%;
+}
